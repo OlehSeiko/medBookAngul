@@ -1,0 +1,12 @@
+<form myForm="ngForm">
+  <h1>ЗАРЕЄСТРУЙТЕСЯ</h1>
+  <p><input type="text" name="name" [(ngModel)]="laboratory.name" placeholder="Ім'я">
+    <input type="text" name="phone" [(ngModel)]="laboratory.name" placeholder="Телефон"></p>
+    <p><input type="text" name="username" [(ngModel)]="laboratory.username" placeholder="Електронна пошта">
+    <input type="date" name="data" [(ngModel)]="laboratory.numberOfBuild" placeholder="Дата">
+  </p>
+  <p><input type="text" name="password" [(ngModel)]="laboratory.password" placeholder="Пароль" required minlength="5">
+  <input type="text" name="password2" [(ngModel)]="labor2" placeholder="Підтвердження Пароля" required minlength="5"></p>
+
+</form>
+<button (click)="registrLaboratory()" [disabled]="!(laboratory.password==labor2)">Зареєструватися</button>

@@ -1,0 +1,20 @@
+<form #myForm="ngForm">
+  <h1>ЗАРЕЄСТРУЙТЕСЯ</h1>
+  <h3><i>Це швидко і просто.</i></h3>
+  <input type="text" name="name" required [(ngModel)]="patient.name" placeholder="Ім'я">
+  <input type="text" name="surname" required [(ngModel)]="patient.surname" placeholder="Прізвище"><br>
+  <p><input type="text" name="username" required [(ngModel)]="patient.username" placeholder="Електронна пошта">
+    <input type="text" name="phone" required [(ngModel)]="patient.phone" placeholder="Телефон">
+    <input type="text" name="password" required [(ngModel)]="patient.password" placeholder="Пароль"></p>
+
+  <p><span>День народження</span><br>
+    <input type="date" name="data" required [(ngModel)]="patient.dataOfBirth" placeholder="Дата">
+
+
+  <p><span>Стать</span><br>
+    <input type="radio" name="gender" value="FEMALE" [(ngModel)]="patient.gender"><label>Жіноча</label>
+    <input type="radio" name="gender" value="MALE" [(ngModel)]="patient.gender"><label>Чоловіча</label></p>
+
+</form>
+
+  <button [disabled]="!myForm.valid" (click)="regis()">Зареєструватися</button>

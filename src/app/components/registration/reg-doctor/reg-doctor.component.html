@@ -1,0 +1,19 @@
+<form myForm="ngForm">
+  <h1>ЗАРЕЄСТРУЙТЕСЯ</h1>
+ <p><input type="text" name="name" [(ngModel)]="doctor.name" placeholder="Ім'я">
+  <input type="text" name="surname" [(ngModel)]="doctor.surname" placeholder="Прізвище">
+  <input type="text" name="speciality" [(ngModel)]="doctor.speciality" placeholder="Спеціальність"></p>
+  <input type="text" name="username" [(ngModel)]="doctor.username" placeholder="Електронна пошта">
+  <input type="text" name="password" [(ngModel)]="doctor.password" placeholder="Пароль" required minlength="5">
+  <input type="text" name="password2" [(ngModel)]="pass2" placeholder="Підтвердження Пароля" required minlength="5">
+  <br>
+  <p><span>День народження</span><br>
+  <input type="date" name="data" [(ngModel)]="doctor.dataOfBirth" placeholder="День народження"></p>
+
+  <p><span>Стать</span><br>
+  <input type="radio" name="gender" value="FEMALE" [(ngModel)]="doctor.gender">Жіноча
+  <input type="radio" name="gender" value="MALE" [(ngModel)]="doctor.gender">Чоловіча</p>
+
+
+</form>
+<button (click)="registrDoctor()" [disabled]="!(doctor.password==pass2)">Зареєструватися</button>

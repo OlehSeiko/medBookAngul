@@ -1,15 +1,15 @@
 <form>
-  <h2>Особова картка пацієнта</h2>
+  <h2>Особова медична картка пацієнта</h2>
   <div>
     <p><span>Електронна пошта</span><br>
       <input [(ngModel)]="userLog.username" type="text" name="name"><br>
       <p><span>Пароль</span><br>
       <input [(ngModel)]="userLog.password" type="text" name="name"></p>
-<div>
+  <div>
     <button class="mg-40" (click)="login()">Увійти</button>
-    <button class="mg-2">Користувач</button>
-    <button class="mg-2">Лікар</button>
-    <button class="mg-2">Лабораторія</button>
-</div>
+
+  </div>
+    <br>
+    <button (click)="register()">РЕЄСТРАЦІЯ</button>
   </div>
 </form>
