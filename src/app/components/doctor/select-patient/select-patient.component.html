@@ -1,0 +1,20 @@
+<div class="mg">
+
+  <div *ngIf="!selectPatient">
+    <form #myForm="ngForm">
+      <input ngModel text="numder" name="id" placeholder="id">
+      <button (click)="searchPatient(myForm.value.id)">Пошук</button>
+    </form>
+  </div>
+
+  <div *ngIf="selectPatient">
+
+    {{selectPatient.surname}}
+    {{selectPatient.name}}
+    {{selectPatient.fatherName}}<br>
+    {{selectPatient.phone}}<br>
+    {{selectPatient.username}}<br>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+.mg{
+  display: flex;
+}
+.width-50{
+  width: 30%;
+}
+.mat-button-toggle-group{
+  width: 100%;
+}
+.mat-button-toggle {
+  width: 20%;
+  height: auto;
+}
+.router-outlet{
+  width: 20%;
+}

@@ -1,0 +1,24 @@
+<!--<form #myForm="ngForm">-->
+
+<!--<input ngModel text="text" name="surname" placeholder="Призвіще">-->
+<!--<button (click)="selectDoctor(myForm.value.surname)">Вибрати</button>-->
+<!--</form>-->
+<form #myForms="ngForm">
+
+  <div *ngIf="specialities">
+<b>Спеціальність:</b>
+<select [(ngModel)]="special" name="speciality">
+  <option *ngFor="let s of specialities" [value]="s">{{s}}</option>
+</select>
+
+  <button (click)="selectSpeciality(myForms)">Вибрати</button>
+  </div>
+
+</form>
+
+<div *ngFor="let doc of doctors">
+  {{doc.surname}}
+  {{doc.name}}
+  {{doc.fatherName}}
+  <b>Спеціальність:</b> {{doc.speciality}}
+</div>

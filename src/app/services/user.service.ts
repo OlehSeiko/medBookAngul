@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -6,7 +6,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   save(user) {
     console.log('Service');
@@ -14,4 +15,8 @@ export class UserService {
       console.log(value);
     });
   }
+
+  // savePhoto(fileFormData) {
+  //   return this.http.post('http://localhost:8080/save/photo', fileFormData);
+  // }
 }

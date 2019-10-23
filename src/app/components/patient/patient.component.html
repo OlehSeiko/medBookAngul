@@ -1,1 +1,25 @@
-<p>patient works!</p>
+<div>
+  <mat-button-toggle-group>
+  <mat-button-toggle>Моя сторінка</mat-button-toggle>
+  <mat-button-toggle (click)="recordToDoctor()">Запис до лікаря</mat-button-toggle>
+  <mat-button-toggle>Історія хвороби</mat-button-toggle>
+  <mat-button-toggle>Аналізи</mat-button-toggle>
+  <mat-button-toggle (click)="exit()">Вихід</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<h1>Пацієнт</h1>
+<div class="mg">
+<div *ngIf="patientPotochnuy">
+  <b>{{patientPotochnuy.surname}}</b><br>
+  <b>{{patientPotochnuy.name}}</b><br>
+  <b>{{patientPotochnuy.fatherName}}</b><br>
+  <p>{{patientPotochnuy.phone}}</p>
+  {{patientPotochnuy.username}}<br>
+
+<!--  <img [src]="'http://localhost:8080/photo' + "  >-->
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
+</div>

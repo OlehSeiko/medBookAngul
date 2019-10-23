@@ -2,13 +2,16 @@
   <h1>ЗАРЕЄСТРУЙТЕСЯ</h1>
  <p><input type="text" name="name" [(ngModel)]="doctor.name" placeholder="Ім'я">
   <input type="text" name="surname" [(ngModel)]="doctor.surname" placeholder="Прізвище">
-  <input type="text" name="speciality" [(ngModel)]="doctor.speciality" placeholder="Спеціальність"></p>
-  <input type="text" name="username" [(ngModel)]="doctor.username" placeholder="Електронна пошта">
+ <input type="text" name="fatherName" [(ngModel)]="doctor.fatherName" placeholder="По батькові"></p>
+ <p><input type="text" name="speciality" [(ngModel)]="doctor.speciality" placeholder="Спеціальність">
+  <input type="text" name="phone" [(ngModel)]="doctor.phone" placeholder="Телефон">
+   <input type="text" name="username" [(ngModel)]="doctor.username" placeholder="Електронна пошта"></p>
   <input type="text" name="password" [(ngModel)]="doctor.password" placeholder="Пароль" required minlength="5">
   <input type="text" name="password2" [(ngModel)]="pass2" placeholder="Підтвердження Пароля" required minlength="5">
   <br>
   <p><span>День народження</span><br>
   <input type="date" name="data" [(ngModel)]="doctor.dataOfBirth" placeholder="День народження"></p>
+  Додати Фото: <input type="file" (change)="selectPhotoDoctor($event)">
 
   <p><span>Стать</span><br>
   <input type="radio" name="gender" value="FEMALE" [(ngModel)]="doctor.gender">Жіноча
@@ -16,4 +19,4 @@
 
 
 </form>
-<button (click)="registrDoctor()" [disabled]="!(doctor.password==pass2)">Зареєструватися</button>
+<button (click)="registerDoctor()" [disabled]="!(doctor.password==pass2)">Зареєструватися</button>

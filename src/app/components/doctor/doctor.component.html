@@ -1,1 +1,28 @@
-<p>doctor works!</p>
+<div *ngIf="doctorPotochnuy">
+  <mat-button-toggle-group>
+  <mat-button-toggle>Моя Сторінка</mat-button-toggle>
+  <mat-button-toggle (click)="selectPatient()">Вибір пацієнта</mat-button-toggle>
+  <mat-button-toggle>Робочий календар</mat-button-toggle>
+  <mat-button-toggle>Історія хвороби</mat-button-toggle>
+  <mat-button-toggle (click)="exit()">Вихід</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<h1>Лікар</h1>
+
+<div class="mg">
+  <div class="width-50" *ngIf="doctorPotochnuy">
+    <strong>{{doctorPotochnuy.surname}}</strong><br>
+    <strong>{{doctorPotochnuy.name}}</strong><br>
+    <strong>{{doctorPotochnuy.fatherName}}</strong><br>
+    <p>{{doctorPotochnuy.speciality}}</p><br>
+    {{doctorPotochnuy.phone}}<br>
+    {{doctorPotochnuy.username}}<br>
+  </div>
+
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+

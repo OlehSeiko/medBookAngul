@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Laboratory} from '../../models/Laboratory';
+import {LaboratoryService} from '../../services/laboratory.service';
 
 @Component({
   selector: 'app-laboratory',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaboratoryComponent implements OnInit {
 
-  constructor() { }
+  laboratoryPotochuy: Laboratory;
+
+  constructor(private laboratoryService: LaboratoryService) {
+  }
 
   ngOnInit() {
+    this.laboratoryService.laboratoryPotochuy().subscribe(value => {
+      this.laboratoryPotochuy = value;
+    });
   }
 
 }

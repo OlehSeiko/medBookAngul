@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./reg-doctor.component.css']
 })
 export class RegDoctorComponent implements OnInit {
+
+  doctorPhoto: File;
   pass2;
 
   doctor: Doctor = new Doctor();
@@ -20,12 +22,17 @@ export class RegDoctorComponent implements OnInit {
   ngOnInit() {
   }
 
-  registrDoctor() {
+  registerDoctor() {
     this.doctor.role = Role.ROLE_DOCTOR;
+    this.doctor.image = this.doctorPhoto.name;
     this.doctorService.save(this.doctor).subscribe(value => {
       console.log(value);
       this.router.navigate(['']);
     });
 
+  }
+
+  selectPhotoDoctor(event) {
+    this.doctorPhoto = event.target.files[0];
   }
 }
