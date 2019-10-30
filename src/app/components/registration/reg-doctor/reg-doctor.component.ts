@@ -13,6 +13,8 @@ export class RegDoctorComponent implements OnInit {
 
   doctorPhoto: File;
   pass2;
+  special;
+  specialities;
 
   doctor: Doctor = new Doctor();
 
@@ -20,13 +22,25 @@ export class RegDoctorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.doctorService.getSpeciality().subscribe(value => {
+      this.specialities = value;
+    });
   }
 
   registerDoctor() {
     this.doctor.role = Role.ROLE_DOCTOR;
     this.doctor.image = this.doctorPhoto.name;
+    console.log(this.doctor);
+
     this.doctorService.save(this.doctor).subscribe(value => {
       console.log(value);
+
+      const fileFormData: FormData = new FormData();
+      fileFormData.append('photo', this.doctorPhoto, this.doctorPhoto.name);
+      this.doctorService.savePhotoDoctor(fileFormData).subscribe(value1 => {
+        console.log(value1.toString());
+      });
+
       this.router.navigate(['']);
     });
 

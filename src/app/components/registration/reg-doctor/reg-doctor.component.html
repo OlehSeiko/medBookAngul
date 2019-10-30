@@ -1,16 +1,21 @@
 <form myForm="ngForm">
   <h1>ЗАРЕЄСТРУЙТЕСЯ</h1>
- <p><input type="text" name="name" [(ngModel)]="doctor.name" placeholder="Ім'я">
-  <input type="text" name="surname" [(ngModel)]="doctor.surname" placeholder="Прізвище">
+  <p><input type="text" name="surname" [(ngModel)]="doctor.surname" placeholder="Прізвище">
+ <input type="text" name="name" [(ngModel)]="doctor.name" placeholder="Ім'я">
  <input type="text" name="fatherName" [(ngModel)]="doctor.fatherName" placeholder="По батькові"></p>
- <p><input type="text" name="speciality" [(ngModel)]="doctor.speciality" placeholder="Спеціальність">
-  <input type="text" name="phone" [(ngModel)]="doctor.phone" placeholder="Телефон">
+ <p><input type="text" name="phone" [(ngModel)]="doctor.phone" placeholder="Телефон">
    <input type="text" name="username" [(ngModel)]="doctor.username" placeholder="Електронна пошта"></p>
   <input type="text" name="password" [(ngModel)]="doctor.password" placeholder="Пароль" required minlength="5">
   <input type="text" name="password2" [(ngModel)]="pass2" placeholder="Підтвердження Пароля" required minlength="5">
-  <br>
+
+  <p><span>Спеціальність</span><br>
+    <select [(ngModel)]="doctor.speciality" name="speciality">
+    <option *ngFor="let s of specialities" [value]="s">{{s}}</option>
+  </select></p>
   <p><span>День народження</span><br>
   <input type="date" name="data" [(ngModel)]="doctor.dataOfBirth" placeholder="День народження"></p>
+  <br>
+
   Додати Фото: <input type="file" (change)="selectPhotoDoctor($event)">
 
   <p><span>Стать</span><br>

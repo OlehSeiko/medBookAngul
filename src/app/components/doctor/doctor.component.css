@@ -1,5 +1,6 @@
 .mg{
   display: flex;
+  flex-direction: row;
 }
 .width-50{
   width: 30%;
@@ -13,4 +14,7 @@
 }
 .router-outlet{
   width: 20%;
+}
+.imag{
+  width: 35%;
 }

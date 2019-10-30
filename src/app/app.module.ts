@@ -18,10 +18,8 @@ import {RegDoctorComponent} from './components/registration/reg-doctor/reg-docto
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatButtonToggleModule, MatCheckboxModule} from '@angular/material';
 import {SelectPatientComponent} from './components/doctor/select-patient/select-patient.component';
-import { RecordToDoctorComponent } from './components/patient/record-to-doctor/record-to-doctor.component';
-
-
-
+import {RecordToDoctorComponent} from './components/patient/record-to-doctor/record-to-doctor.component';
+import {HistoryRegistrationPatientComponent} from './components/doctor/history-registration-patient/history-registration-patient.component';
 
 
 const routes: Routes = [
@@ -34,13 +32,18 @@ const routes: Routes = [
       {path: 'patient', component: RegPatientComponent},
     ]
   },
-  {path: 'patient', component: PatientComponent, children: [
+  {
+    path: 'patient', component: PatientComponent, children: [
       {path: 'record-doctor', component: RecordToDoctorComponent},
-    ]},
+    ]
+  },
   {path: 'laboratory', component: LaboratoryComponent},
-  {path: 'doctor', component: DoctorComponent, children: [
+  {
+    path: 'doctor', component: DoctorComponent, children: [
       {path: 'select-patient', component: SelectPatientComponent},
-    ]}
+      {path: 'selectCalendarDoctor', component: HistoryRegistrationPatientComponent}
+    ]
+  }
 ];
 
 @NgModule({
@@ -55,7 +58,8 @@ const routes: Routes = [
     RegLaboratoryComponent,
     RegPatientComponent,
     SelectPatientComponent,
-    RecordToDoctorComponent
+    RecordToDoctorComponent,
+    HistoryRegistrationPatientComponent
 
   ],
   imports: [

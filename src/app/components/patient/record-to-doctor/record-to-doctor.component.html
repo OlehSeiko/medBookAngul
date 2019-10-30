@@ -5,13 +5,15 @@
 <!--</form>-->
 <form #myForms="ngForm">
 
-  <div *ngIf="specialities">
-<b>Спеціальність:</b>
-<select [(ngModel)]="special" name="speciality">
-  <option *ngFor="let s of specialities" [value]="s">{{s}}</option>
-</select>
+  <div *ngIf="spec">
+    <div *ngIf="specialities">
+      <b>Спеціальність:</b>
+      <select [(ngModel)]="special" name="speciality">
+        <option *ngFor="let s of specialities" [value]="s">{{s}}</option>
+      </select>
 
-  <button (click)="selectSpeciality(myForms)">Вибрати</button>
+      <button (click)="selectSpeciality(myForms)">Вибрати</button>
+    </div>
   </div>
 
 </form>
@@ -22,3 +24,4 @@
   {{doc.fatherName}}
   <b>Спеціальність:</b> {{doc.speciality}}
 </div>
+

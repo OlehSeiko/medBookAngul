@@ -1,10 +1,27 @@
-.mg{
-  display: flex;
-}
+/*.mg{*/
+/*   display: flex;*/
+/* }*/
 .mat-button-toggle-group{
   width: 100%;
 }
 .mat-button-toggle {
   width: 20%;
   height: auto;
+}
+.imag{
+  width: 50%;
+}
+.router-outlet{
+  display: flex;
+  flex-direction: row;
+}
+.width-100{
+  width: 100%;
+}
+.div{
+  display: flex;
+  flex-direction: row;
+}
+.width-30{
+  width: 30%;
 }

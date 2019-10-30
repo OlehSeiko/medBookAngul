@@ -15,6 +15,7 @@ export class RecordToDoctorComponent implements OnInit {
   isSelectSpec = true;
   specialities;
   special;
+  spec = true;
 
   constructor(private doctorService: DoctorService, private router: Router) {
   }
@@ -30,8 +31,10 @@ export class RecordToDoctorComponent implements OnInit {
     console.log(this.special);
     this.doctorService.getDoctorsBySpetiality(data.value.speciality).subscribe(value => {
       this.doctors = value;
+
       console.log(this.doctors);
       this.isSelectSpec = false;
+      this.spec = false;
     });
 
   }

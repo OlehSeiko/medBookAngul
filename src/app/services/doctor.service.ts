@@ -46,4 +46,7 @@ export class DoctorService {
     headers = headers.append('Role', role);
     return this.http.get<Doctor[]>(`http://localhost:8080/patient/doctor/${speciality}`, {headers});
   }
+  savePhotoDoctor(fileFormData) {
+    return this.http.post('http://localhost:8080/save/photo', fileFormData, {observe: 'body'});
+  }
 }

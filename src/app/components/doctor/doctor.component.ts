@@ -30,4 +30,9 @@ export class DoctorComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate(['']);
   }
+
+  selectCalendarDoctor() {
+    this.router.navigate(['doctor', 'selectCalendarDoctor']);
+
+  }
 }
